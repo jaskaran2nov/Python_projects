@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<br>
+<form class="d-flex" style="padding-left: 600px; padding-right: 600px;" method="POST">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+<br>
+
+<ul class="list-group">
+    {% for post in object_list %}
+    <li class="list-group-item list-group-item-primary">{{post.titel}}   |   {{post.author}}<br>
+    {{post.datetime}}
+    <a href="{% url 'view_post' post.pk %}" class="btn btn-info" role="button">Show Code</a>
+    </li>
+
+    {% endfor %}
+</ul>
+
+{% endblock %}

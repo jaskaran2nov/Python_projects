@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<ul class="list-group">
+    <li class="list-group-item list-group-item-action list-group-item-primary">
+        <br>
+        <figure class="text-center">
+            <blockquote class="blockquote">
+              <h1>{{post.titel}}</h1> 
+              {% if user.is_authenticated %}
+              <a href="{% url 'editpost' post.pk %}" class="btn btn-info" role="button">Edit</a> <a href="{% url 'removepost' post.pk %}" class="btn btn-info" role="button">DELETE</a>
+              {% endif %}
+            </blockquote>
+          </figure>
+        <br>
+    </li>
+</ul>
+<br>
+<li class="list-group-item list-group-item-action list-group-item-dark">
+    <figure class="text-center">
+        <blockquote class="blockquote">
+          <h3>{{post.author}}   |   {{post.datetime}}</h3>
+        </blockquote>
+      </figure>
+</li>
+<br>
+<li class="list-group-item list-group-item-action list-group-item-info">
+    <figure>
+        <blockquote class="blockquote">
+            <h4>Description:</h4>
+            <br>
+            <h5>{{post.description}}</h5>
+            <br>
+            <br>
+        </blockquote>
+      </figure>
+</li>
+<br>
+<div class='bg-dark text-light'>
+        <pre>
+            <code class="pythoncolor">
+                <p>{{post.code}}</p>
+            </code>
+        </pre>
+</div>
+<br>
+<br>
+{% endblock %}
+
+<code>
+    <p>{{post.code}}</p>
+</code>

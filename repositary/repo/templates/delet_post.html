@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container alert alert-danger">
+        <figure class="text-center">
+            <blockquote class="blockquote">
+              <h1>Delete Post</h1>
+            </blockquote>
+        </figure>
+    </div>
+    <br/>
+    <br/>
+    <li class="list-group-item list-group-item-danger">
+        <h3>Delete: {{post.titel}}</h3>
+    </li>
+    <br/>
+    <div class="form-group">
+        <form method="Post">
+            {% csrf_token %}
+            <h2>
+                <strong>Are you sure?</strong><br/>
+            </h2>
+            
+            <button class="btn btn-secondary">DELETE</button>
+        </form>
+    </div>
+{% endblock %}

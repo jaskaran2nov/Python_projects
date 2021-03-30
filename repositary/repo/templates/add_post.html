@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Add a new Project</h2>
+<br>
+<br>
+
+<div class="form-group">
+    <form method="Post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="btn btn-secondary">POST</button>
+    </form>
+</div>
+
+{% endblock %}
